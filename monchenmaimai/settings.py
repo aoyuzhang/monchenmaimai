@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ["cryptic-river-78379.herokuapp.com"]
+ALLOWED_HOSTS = ["cryptic-river-78379.herokuapp.com",'127.0.0.1']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'catalog.apps.CatalogConfig',
 ]
 
 MIDDLEWARE = [
@@ -141,4 +142,3 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
