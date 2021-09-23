@@ -12,3 +12,13 @@ class Company(models.Model):
     naics = models.IntegerField()
     corporation_id = models.IntegerField()
 
+
+class Topic(models.Model):
+    # other fields...
+    # Add `auto_now_add=True` to the `last_updated` field
+    last_updated = models.DateTimeField(auto_now_add=True)
+
+class Post(models.Model):
+    # other fields...
+    # Add `null=True` to the `updated_by` field
+    updated_by = models.ForeignKey(User, null=True, related_name='+', on_delete = models.CASCADE)

@@ -5,11 +5,9 @@ from django.contrib import admin
 
 
 urlpatterns = [
-
-]
-
-
-
-urlpatterns = [
     path('', views.home, name="home"),
+    path('', views.sales, name = "sales"),
+    path('', views.tools, name = "tools"),
+    path('', views.news, name ="news"),
 ]
+

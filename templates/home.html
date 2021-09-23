@@ -1,21 +1,39 @@
-<!DOCTYPE html>
+{% load static %}<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>加拿大华人网页</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
   </head>
   <body>
-    <h1>加拿大华人网页</h1>
-
-    <table border="1">
-      <thead>
-        <tr>
-          <th>买卖</th>
-          <th>小功能</th>
-          <th>新闻</th>
-          <th>自编</th>
-        </tr>
-      </thead>
-    </table>
+    <div class="container">
+      <ol class="breadcrumb my-4">
+        <li class="breadcrumb-item active">加拿大华人网页</li>
+      </ol>
+      <table class="table">
+        <thead class="thead-inverse">
+          <tr>
+            <th>买卖</th>
+            <th>小功能</th>
+            <th>新闻</th>
+            <th>自编</th>
+            <th>新闻</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for company in companies %}
+            <tr>
+              <td>
+                {{ company.name }}
+                <small class="text-muted d-block">{{ company.description }}</small>
+              </td>
+              <td class="align-middle">0</td>
+              <td class="align-middle">0</td>
+              <td></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
   </body>
 </html>
